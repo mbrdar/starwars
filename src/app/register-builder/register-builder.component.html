@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1>Using ngForm</h1>
+    <form [formGroup]="registerForm" class="form-horizontal" (ngSubmit)="register(registerForm)">
+      <div class="form-group" [class.has-error]="registerForm.controls.firstName.invalid && registerForm.controls.firstName.touched">
+        <label for="firstName" class="col-sm-2 col-md-2 col-lg-2 control-label">First name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="firstName" placeholder="First name"
+                 name="firstName" [formControl]="registerForm.controls['firstName']">
+        </div>
+      </div>
+      <div class="form-group" [class.has-error]="registerForm.controls.lastName.invalid && registerForm.controls.lastName.touched">
+        <label for="lastName" class="col-sm-2 col-md-2 col-lg-2 control-label">Last name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="lastName" placeholder="Last name"
+                 name="lastName" [formControl]="registerForm.controls['firstName']">
+        </div>
+      </div>
+      <div class="form-group" [class.has-error]="registerForm.controls.email.invalid && registerForm.controls.email.touched">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Email"
+                 name="email"  [formControl]="registerForm.controls['email']">
+        </div>
+      </div>
+      <div class="form-group" [class.has-error]="registerForm.controls.password.invalid && registerForm.controls.password.touched">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" placeholder="Password"
+                 min-length="3" name="password" [formControl]="registerForm.controls['password']">
+        </div>
+      </div>
+      <div class="form-group" [class.has-error]="registerForm.controls.confirmPassword.invalid && registerForm.controls.confirmPassword.touched">
+        <label for="confirmPassword" class="col-sm-2 control-label">Confirm Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
+                 name="confirmPassword" [formControl]="registerForm.controls['confirmPassword']">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-6" *ngIf="registerForm">
+    Form valid: {{registerForm.valid | json}}<br>
+    <hr>
+    Fields validation:<br>
+    <p><b>firstName:</b> {{registerForm.controls.firstName.valid | json}}</p>
+    <p><b>lastName:</b> {{registerForm.controls.lastName.valid | json}}</p>
+    <p><b>email:</b> {{registerForm.controls.email.valid | json}}</p>
+    <p><b>password:</b> {{registerForm.controls.password.valid | json}}</p>
+    <p><b>confirm password:</b> {{registerForm.controls.confirmPassword.valid | json}}</p>
+    <hr>
+    Fields errors:<br>
+    <p><b>firstName:</b> {{registerForm.controls.firstName.errors | json}}</p>
+    <p><b>lastName:</b> {{registerForm.controls.lastName.errors | json}}</p>
+    <p><b>email:</b> {{registerForm.controls.email.errors | json}}</p>
+    <p><b>password:</b> {{registerForm.controls.password.errors | json}}</p>
+    <p><b>confirm password:</b> {{registerForm.controls.confirmPassword.errors | json}}</p>
+
+    <hr>
+    Fields touched:<br>
+    <p><b>firstName:</b> {{registerForm.controls.firstName.touched | json}}</p>
+    <p><b>lastName:</b> {{registerForm.controls.lastName.touched | json}}</p>
+    <p><b>email:</b> {{registerForm.controls.email.touched | json}}</p>
+    <p><b>password:</b> {{registerForm.controls.password.touched | json}}</p>
+    <p><b>confirm password:</b> {{registerForm.controls.confirmPassword.touched | json}}</p>
+    <hr>
+    Fields pristine:<br>
+    <p><b>firstName:</b> {{registerForm.controls.firstName.pristine | json}}</p>
+    <p><b>lastName:</b> {{registerForm.controls.lastName.pristine | json}}</p>
+    <p><b>email:</b> {{registerForm.controls.email.pristine | json}}</p>
+    <p><b>password:</b> {{registerForm.controls.password.pristine | json}}</p>
+    <p><b>confirm password:</b> {{registerForm.controls.confirmPassword.pristine | json}}</p>
+    <hr>
+  </div>
+
+</div>

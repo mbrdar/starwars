@@ -1,0 +1,9 @@
+<div class="row" id="movies">
+  <div class="col-sm-4 col-md-3" *ngFor="let movie of movies">
+    <div class="thumbnail" highlight [routerLink]="movie.id">
+      <div class="caption">
+        <h3>{{movie.title}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

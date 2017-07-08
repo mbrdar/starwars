@@ -1,3 +1,43 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-inverse bg-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="">Star Wars</a>
+    </div>
+    <login (loggedInEvent)="onLoggedInEvent($event)"></login>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="characters"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}" id="charactersNavigation">Characters</a>
+        </li>
+        <li><a routerLink="movies"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}"
+               id="moviesNavigation">Movies</a>
+        </li>
+        <li>
+          <a routerLink="starships" id="starShipsNavigation">
+          Starships <span *ngIf="!loggedIn" class="glyphicon glyphicon-lock"
+                                                               aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="vehicles" id="vehiclesNavigation">
+            Vehicles <span *ngIf="!loggedIn" class="glyphicon glyphicon-lock"
+                                                    aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="examples" id="examples">
+            Examples
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

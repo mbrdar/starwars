@@ -38,5 +38,5 @@ let routes = [
     RxjsComponent],
   exports: [CustomIfDirective]
 })
-export default class ExamplesModule {
+export class ExamplesModule {
 }

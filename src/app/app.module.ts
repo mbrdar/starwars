@@ -27,7 +27,7 @@ import {FilterPipe} from "./pipes/filter.pipe";
 import {RegisterComponent} from "./register/register.component";
 import {RegisterBuilderComponent} from './register-builder/register-builder.component';
 import {EqualValidatorDirective} from 'app/directives/equal-validator.directive';
-import ExamplesModule from "app/examples/examples.module";
+import {ExamplesModule} from "app/examples/examples.module";
 
 const routes: Routes = [
   {path: '', redirectTo: 'characters', pathMatch: 'full'},
@@ -40,7 +40,8 @@ const routes: Routes = [
   {path: 'starships', component: StarshipsComponent, canActivate: [LoggedInGuard]},
   {path: 'starships/:id', component: StarshipDetailsComponent, canActivate: [LoggedInGuard]},
   {path: 'register', component: RegisterComponent},
-  {path: 'register-builder', component: RegisterBuilderComponent}
+  {path: 'register-builder', component: RegisterBuilderComponent},
+  {path: 'examples', loadChildren: 'app/examples/examples.module#ExamplesModule'}
 ];
 
 @NgModule({

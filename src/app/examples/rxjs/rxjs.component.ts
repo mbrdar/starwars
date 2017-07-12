@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {Subject} from "rxjs";
+import {Subject} from 'rxjs/Subject';
+import 'rxjs/add/operator/throttleTime';
+
 
 @Component({
   selector: 'rxjs',
@@ -12,7 +14,11 @@ export class RxjsComponent {
 
   constructor() {
     this.clickMeStream$
-      .subscribe(event => console.log(event))
+      .map((value) => {
+        return 'test' + value;
+      })
+      .throttleTime(2000)
+      .subscribe(event => console.log(event));
   }
 
 }

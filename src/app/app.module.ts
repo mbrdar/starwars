@@ -40,8 +40,7 @@ const routes: Routes = [
   {path: 'starships', component: StarshipsComponent, canActivate: [LoggedInGuard]},
   {path: 'starships/:id', component: StarshipDetailsComponent, canActivate: [LoggedInGuard]},
   {path: 'register', component: RegisterComponent},
-  {path: 'register-builder', component: RegisterBuilderComponent},
-  {path: 'examples', loadChildren: 'app/examples/examples.module'}
+  {path: 'register-builder', component: RegisterBuilderComponent}
 ];
 
 @NgModule({

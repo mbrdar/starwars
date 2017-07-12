@@ -13,11 +13,11 @@ import { OnPushChangeDetectionComponent } from './on-push-change-detection/on-pu
 import { RxjsComponent } from './rxjs/rxjs.component';
 
 let routes = [
-  {path: '', component: HooksComponent},
+  {path: 'examples', redirectTo: 'examples/hooks', pathMatch: 'full'},
   {path: 'examples/hooks', component: HooksComponent},
   {path: 'examples/directive', component: CustomIfComponent},
   {path: 'examples/changedetection', component: ChangeDetectionComponent},
-  {path: 'examples/rxjs', component: RxjsComponent},
+  {path: 'examples/rxjs', component: RxjsComponent}
 ];
 
 @NgModule({

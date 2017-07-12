@@ -1,4 +1,3 @@
-import {StarwarsPage} from './app.po';
 import {browser, by, element} from "protractor/built";
 
 describe('starWars App characters page', () => {

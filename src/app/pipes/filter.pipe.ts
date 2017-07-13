@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'filter'
@@ -6,10 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(values: any, term: any): any {
-    //check is search term is undefined
-    if(term === undefined) return values;
+    // check is search term is undefined
+    if (term === undefined) {
+      return values;
+    }
 
-    return values.filter((value)=> {
+    return values.filter((value) => {
       return value.name.toLowerCase().includes(term.toLowerCase());
     });
   }

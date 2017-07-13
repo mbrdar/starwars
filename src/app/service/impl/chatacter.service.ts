@@ -31,7 +31,7 @@ export class CharacterService implements StarWarsApi {
       .map((response: any) => <Character[]> response.json())
       .map((response: Character[] & Character) => {
         return this.helperService.createCorrectImagePath(this.apiUrl, response);
-      })
+      });
   }
 
 

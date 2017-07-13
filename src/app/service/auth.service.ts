@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   getUser(): any {
-    return localStorage.getItem('username')
+    return localStorage.getItem('username');
   }
 
   isLoggedIn(): BehaviorSubject<boolean> {

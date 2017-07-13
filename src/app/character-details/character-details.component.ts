@@ -31,7 +31,7 @@ export class CharacterDetailsComponent {
           this.getAllCharacterStarships(character.starships);
           this.getAllCharacterMovies(character.films);
           this.character = character;
-        })
+        });
     });
   }
 

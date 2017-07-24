@@ -15,6 +15,8 @@ export class CharactersComponent {
 
   characters: Array<Character>;
   results;
+  term: string;
+
   constructor(private characterService: CharacterService) {
     characterService.getAll().subscribe((charachters: Character[]) => {
       this.results = charachters;
